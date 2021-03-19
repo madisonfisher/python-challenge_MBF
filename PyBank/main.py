@@ -7,8 +7,9 @@ import csv
 #path to get data
 bankinfo = os.path.join("resources", "budget_data.csv")
 
-#setting count to 0
+#setting variables to 0
 count = 0
+profit = 0
 
 #create csv reader
 with open(bankinfo, 'r') as csvfile:
@@ -19,9 +20,13 @@ with open(bankinfo, 'r') as csvfile:
     #printing the information in the top row
     print(header)
 
-    for row in csvfile:
+    #run for each row in the data file
+    for row in csv_reader:
         #to count each row aka each month
         count = count + 1
+        row_profit = int(row[1])
+        profit = row_profit + profit
+        
     
     #print title of output
     print("Financial Analysis")
@@ -29,3 +34,5 @@ with open(bankinfo, 'r') as csvfile:
     print("____________________")
     #print out how many months there are in the data file
     print(f'Total Months: {count}')
+    #print total profit (+/-)
+    print(f'Total: ${profit}')
