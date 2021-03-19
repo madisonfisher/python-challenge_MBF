@@ -13,7 +13,7 @@ profit = 0
 pre_value = 0
 change = 0
 
-#setting change list
+#setting change_list
 change_list = []
 
 #create csv reader
@@ -41,7 +41,9 @@ with open(bankinfo, 'r') as csvfile:
             change_list.append(change)
     #find average change   
     a_change = round((sum(change_list)/len(change_list)),2)
+    #find greatest increase value
     max_Pchange = max(change_list)
+    #find greatest decrease value
     max_Nchange = min(change_list)
 
 #recreating csv reader to run through all the rows again
@@ -56,9 +58,13 @@ with open(bankinfo, 'r') as csvfile:
         change = int(row[1]) - pre_value
         #reset the previous row value as the current row
         pre_value = int(row[1])
+        #to find the month in which the greatest increase happened
         if change == max_Pchange:
+            #set the variable as the month
             month_Pchange = row[0]
+        #to find the month in which the greatest decrease happened
         elif change == max_Nchange:
+            #set the variable as the month
             month_Nchange = row[0]
 
     #print title of output
@@ -76,7 +82,9 @@ with open(bankinfo, 'r') as csvfile:
     #print greatest decrease
     print(f'Greatest Decrease in Profits: {month_Nchange} (${max_Nchange})')
 
+#set up the path for the output file
 out_text = os.path.join("analysis","PyBank_results.txt")
+#open the txt file to write in it 
 with open(out_text, 'w') as file:
     #write title of output
     #+ '\n' to go to new line
