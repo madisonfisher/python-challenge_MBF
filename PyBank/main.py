@@ -41,6 +41,25 @@ with open(bankinfo, 'r') as csvfile:
             change_list.append(change)
     #find average change   
     a_change = round((sum(change_list)/len(change_list)),2)
+    max_Pchange = max(change_list)
+    max_Nchange = min(change_list)
+
+#recreating csv reader to run through all the rows again
+with open(bankinfo, 'r') as csvfile:
+    #setting csv reader to be seperated by commas
+    csv_reader= csv.reader(csvfile, delimiter=',')
+    #skipping reading the top row
+    header = next(csv_reader)
+
+    for row in csv_reader:
+        #find the difference between the current row and the previous row
+        change = int(row[1]) - pre_value
+        #reset the previous row value as the current row
+        pre_value = int(row[1])
+        if change == max_Pchange:
+            month_Pchange = row[0]
+        elif change == max_Nchange:
+            month_Nchange = row[0]
 
     #print title of output
     print("Financial Analysis")
@@ -52,3 +71,7 @@ with open(bankinfo, 'r') as csvfile:
     print(f'Total: ${profit}')
     #print average change
     print(f'Average Change: ${a_change}')
+    #print greatest increase
+    print(f'Greatest Increase in Profits: {month_Pchange} (${max_Pchange})')
+    #print greatest decrease
+    print(f'Greatest Decrease in Profits: {month_Nchange} (${max_Nchange})')
