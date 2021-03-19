@@ -20,5 +20,12 @@ with open(bankinfo, 'r') as csvfile:
     print(header)
 
     for row in csvfile:
+        #to count each row aka each month
         count = count + 1
+    
+    #print title of output
+    print("Financial Analysis")
+    #print dividing line
+    print("____________________")
+    #print out how many months there are in the data file
     print(f'Total Months: {count}')
