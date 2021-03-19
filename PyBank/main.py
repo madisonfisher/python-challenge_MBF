@@ -75,3 +75,21 @@ with open(bankinfo, 'r') as csvfile:
     print(f'Greatest Increase in Profits: {month_Pchange} (${max_Pchange})')
     #print greatest decrease
     print(f'Greatest Decrease in Profits: {month_Nchange} (${max_Nchange})')
+
+out_text = os.path.join("analysis","PyBank_results.txt")
+with open(out_text, 'w') as file:
+    #write title of output
+    #+ '\n' to go to new line
+    file.write("Financial Analysis" + '\n')
+    #write dividing line
+    file.write("____________________" + '\n')
+    #write out how many months there are in the data file
+    file.write(f'Total Months: {count}' + '\n')
+    #write total profit (+/-)
+    file.write(f'Total: ${profit}' + '\n')
+    #write average change
+    file.write(f'Average Change: ${a_change}' + '\n')
+    #write greatest increase
+    file.write(f'Greatest Increase in Profits: {month_Pchange} (${max_Pchange})' + '\n')
+    #write greatest decrease
+    file.write(f'Greatest Decrease in Profits: {month_Nchange} (${max_Nchange})' + '\n')
