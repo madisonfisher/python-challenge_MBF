@@ -64,16 +64,29 @@ with open(pollinfo, 'r') as csvfile:
         #adding calculated percent to list
         percent_votes.append(percent)
 
-        
+    #calculate the winner
+    #set base values in case no one beats the first value
+    winner = candidates[0]
+    value = votes_count[0]
+    #run through all the candidates 
+    for x in number_can:
+        #compare to the current highest
+        if value < votes_count[x]:
+            #if the listed votes in the index is higher than the original it replaces it as the new highest
+            value = votes_count[x]
+            #saves the name of the candidate attached to the new highest votes
+            winner = candidates[x]  
+    print(candidates)
+    print(winner)
 
-    #print title of output
-    print("Election Results")
-    #print dividing line
-    print("____________________")
-    #print out how many votes there are in the data file
-    print(f'Total Votes: {count}')
-    #print dividing line
-    print("____________________")
+#print title of output
+print("Election Results")
+#print dividing line
+print("____________________")
+#print out how many votes there are in the data file
+print(f'Total Votes: {count}')
+#print dividing line
+print("____________________")
     
     
     
