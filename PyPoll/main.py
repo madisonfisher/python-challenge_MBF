@@ -111,4 +111,13 @@ with open(out_text, 'w') as file:
     file.write(f'Total Votes: {count}' + '\n')
     #write dividing line
     file.write("____________________" + '\n')
+    for x in number_can:
+        #write the data for all the candidates
+        file.write(f'{candidates[x]}: {percent_votes[x]}% ({votes_count[x]})' + '\n')   
+    #write dividing line
+    file.write("____________________" + '\n')
+    #write winner
+    file.write(f'Winner: {winner}' + '\n')
+    #write dividing line
+    file.write("____________________" + '\n')
     
