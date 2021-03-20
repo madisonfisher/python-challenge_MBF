@@ -14,6 +14,7 @@ votes = 0
 #set list
 candidates = []
 votes_count = []
+percent_votes = []
 
 #create csv reader
 with open(pollinfo, 'r') as csvfile:
@@ -36,6 +37,7 @@ with open(pollinfo, 'r') as csvfile:
         #find how many candidates and put it in a range
         number_can = range(len(candidates))
 
+#create a 0 count list
 for x in number_can:
     votes_count.append(0)
 
@@ -48,13 +50,21 @@ with open(pollinfo, 'r') as csvfile:
 
     #run for each row in the data file
     for row in csv_reader:
+        #run throough each candidate
         for x in number_can:
+            #if the candidate name appears on the row it will be counted
             if candidates[x] == row[2]:
+                #adds one vote to previous value in that candidate's index
                 votes_count[x] += 1
-    
-    print(candidates)
-    print(votes_count)
 
+    #calcuate percent for each candidate
+    for x in number_can:
+        #formula for percent being rounded
+        percent = round((votes_count[x]*100 / count),2)
+        #adding calculated percent to list
+        percent_votes.append(percent)
+
+        
 
     #print title of output
     print("Election Results")
