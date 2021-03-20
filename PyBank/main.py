@@ -70,7 +70,7 @@ with open(bankinfo, 'r') as csvfile:
     #print title of output
     print("Financial Analysis")
     #print dividing line
-    print("____________________")
+    print("--------------------")
     #print out how many months there are in the data file
     print(f'Total Months: {count}')
     #print total profit (+/-)
@@ -90,7 +90,7 @@ with open(out_text, 'w') as file:
     #+ '\n' to go to new line
     file.write("Financial Analysis" + '\n')
     #write dividing line
-    file.write("____________________" + '\n')
+    file.write("--------------------" + '\n')
     #write out how many months there are in the data file
     file.write(f'Total Months: {count}' + '\n')
     #write total profit (+/-)
