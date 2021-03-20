@@ -76,8 +76,6 @@ with open(pollinfo, 'r') as csvfile:
             value = votes_count[x]
             #saves the name of the candidate attached to the new highest votes
             winner = candidates[x]  
-    print(candidates)
-    print(winner)
 
 #print title of output
 print("Election Results")
@@ -87,7 +85,16 @@ print("____________________")
 print(f'Total Votes: {count}')
 #print dividing line
 print("____________________")
-    
+#run through all candidates
+for x in number_can:
+    #prints the data for all the candidates
+    print(f'{candidates[x]}: {percent_votes[x]}% ({votes_count[x]})')   
+#print dividing line
+print("____________________")
+#print winner
+print(f'Winner: {winner}')
+#print dividing line
+print("____________________")
     
     
 
