@@ -2,7 +2,7 @@
 
 The following two (2) analysis are contained in this repository:
 
-## (1) - PyBank -
+## PyBank
 Reviewing the financial records of a company to determine:
 - the number of months listed in the data
 - total profit (+/-)
@@ -12,7 +12,7 @@ Reviewing the financial records of a company to determine:
 
 The above listed results can be found in the corresponding analysis folder in the file PyBank_results.txt or in a terminal window when one runs the main.py in the PyBank folder.
 
-## (2) - PyPoll - 
+## PyPoll
 Reviewing polling data to determine:
 - the number of votes
 - candidates who received votes
