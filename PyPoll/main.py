@@ -80,21 +80,21 @@ with open(pollinfo, 'r') as csvfile:
 #print title of output
 print("Election Results")
 #print dividing line
-print("____________________")
+print("--------------------")
 #print out how many votes there are in the data file
 print(f'Total Votes: {count}')
 #print dividing line
-print("____________________")
+print("--------------------")
 #run through all candidates
 for x in number_can:
     #prints the data for all the candidates
     print(f'{candidates[x]}: {percent_votes[x]}% ({votes_count[x]})')   
 #print dividing line
-print("____________________")
+print("--------------------")
 #print winner
 print(f'Winner: {winner}')
 #print dividing line
-print("____________________")
+print("--------------------")
     
     
 
@@ -106,18 +106,18 @@ with open(out_text, 'w') as file:
     #+ '\n' to go to new line
     file.write("Election Results" + '\n')
     #write dividing line
-    file.write("____________________" + '\n')
+    file.write("--------------------" + '\n')
     #write out how many votes there are in the data file
     file.write(f'Total Votes: {count}' + '\n')
     #write dividing line
-    file.write("____________________" + '\n')
+    file.write("--------------------" + '\n')
     for x in number_can:
         #write the data for all the candidates
         file.write(f'{candidates[x]}: {percent_votes[x]}% ({votes_count[x]})' + '\n')   
     #write dividing line
-    file.write("____________________" + '\n')
+    file.write("--------------------" + '\n')
     #write winner
     file.write(f'Winner: {winner}' + '\n')
     #write dividing line
-    file.write("____________________" + '\n')
+    file.write("--------------------" + '\n')
     
